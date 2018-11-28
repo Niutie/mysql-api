@@ -1,6 +1,7 @@
 package com.zzh.mysql;
 
 import com.zzh.mysql.model.Demo01;
+import com.zzh.mysql.service.Demo01Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
@@ -42,5 +43,18 @@ public class MysqlApplicationTests {
              demo01List) {
             System.out.println("column_01: " + demo01.getColumn_1() + "; column_02: " + demo01.getColumn_2() + "; column_03: " + demo01.getColumn_3());
         }
+    }
+
+    @Resource
+    private Demo01Service demo01Service;
+    @Test
+    public void testRepository(){
+        List<Demo01> demo01List = demo01Service.finaAll();
+        System.out.println("所有结果数量：" + demo01List.size());
+        for (Demo01 demo01:
+             demo01List) {
+            System.out.println(demo01.getColumn_1() + " " + demo01.getColumn_2() + " " + demo01.getColumn_3());
+        }
+
     }
 }

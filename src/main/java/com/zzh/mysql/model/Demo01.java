@@ -1,6 +1,13 @@
 package com.zzh.mysql.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "demo01")
 public class Demo01 {
+    @Id
     private int column_1;
     private String column_2;
     private String column_3;
