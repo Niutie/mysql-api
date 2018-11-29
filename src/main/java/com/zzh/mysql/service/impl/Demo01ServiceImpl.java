@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class Demo01ServiceImpl implements Demo01Service {
@@ -14,8 +15,8 @@ public class Demo01ServiceImpl implements Demo01Service {
     private Demo01Repository demo01Repository;
 
     @Override
-    public Demo01 findByColumn_1(int column_1) {
-        return demo01Repository.findById(String.valueOf(column_1)).get();
+    public Optional<Demo01> findByColumn_1(String column_1) {
+        return demo01Repository.findById(column_1);
     }
 
     @Override
@@ -29,8 +30,9 @@ public class Demo01ServiceImpl implements Demo01Service {
     }
 
     @Override
-    public void delete(int column_1) {
+    public void delete(String column_1) {
         demo01Repository.deleteById(String.valueOf(column_1));
         System.out.println("第 " + column_1 + " 行数据已经删除！");
     }
+
 }
