@@ -1,6 +1,6 @@
 package com.zzh.mysql.service;
 
-import com.zzh.mysql.model.Demo01;
+import com.zzh.mysql.entity.Demo01;
 
 import java.util.List;
 import java.util.Optional;

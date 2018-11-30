@@ -1,6 +1,6 @@
 package com.zzh.mysql.service.impl;
 
-import com.zzh.mysql.model.Demo01;
+import com.zzh.mysql.entity.Demo01;
 import com.zzh.mysql.repository.Demo01Repository;
 import com.zzh.mysql.service.Demo01Service;
 import org.springframework.stereotype.Service;

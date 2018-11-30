@@ -1,4 +1,4 @@
-package com.zzh.mysql.model;
+package com.zzh.mysql.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

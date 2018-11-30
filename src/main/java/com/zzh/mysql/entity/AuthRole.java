@@ -1,4 +1,4 @@
-package com.zzh.mysql.dao;
+package com.zzh.mysql.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,15 +7,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class AuthUser {
+public class AuthRole {
     @Id
     private Long id;
     @Column(length = 32)
     private String name;
-    @Column(length = 32)
-    private String account;
     @Column(length = 64)
-    private String password;
+    private String note;
 
     public Long getId() {
         return id;
@@ -33,19 +31,11 @@ public class AuthUser {
         this.name = name;
     }
 
-    public String getAccount() {
-        return account;
+    public String getNote() {
+        return note;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNote(String note) {
+        this.note = note;
     }
 }
