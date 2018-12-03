@@ -1,20 +1,27 @@
 package com.zzh.mysql;
 
 import com.zzh.mysql.entity.AuthUser;
+import com.zzh.mysql.entity.Demo01;
 import com.zzh.mysql.repository.AuthUserRepository;
+import com.zzh.mysql.service.Demo01Service;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MysqlApplicationTests {
-/*
 
     @Test
     public void contextLoads() {
@@ -67,7 +74,6 @@ public class MysqlApplicationTests {
         demo01Service.delete("7");
 
     }
-*/
 
     @Autowired
     private AuthUserRepository authUserRepository;
@@ -135,13 +141,4 @@ public class MysqlApplicationTests {
         }
     }
 
-    @Test
-    public void testFindUsersByRole(){
-        List<AuthUser> authUserList = authUserRepository.findUsersByRole(1L);
-        for (AuthUser authUser :
-                authUserList) {
-            System.out.println("id: " + authUser.getId() + " name: " + authUser.getName() + " account: " + authUser.getAccount()
-                    + " password: " + authUser.getPassword());
-        }
-    }
 }

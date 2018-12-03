@@ -16,7 +16,4 @@ public interface AuthUserRepository extends JpaRepository<AuthUser, Long> {
     @Query(nativeQuery = true, value = "select * from auth_user where name = :name1 or name = :name2")
     List<AuthUser> findBySQL(@Param("name1") String name1, @Param("name2") String name2);
 
-    @Query("SELECT U FROM auth_user U ,auth_role RU WHERE U.id = RU.id AND RU.id = :id")
-    List<AuthUser> findUsersByRole(@Param("id") Long id);
-
 }
